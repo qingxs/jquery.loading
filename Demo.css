@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+}
+
+.btns {
+  text-align: center;
+  border-bottom: 1px solid #9acfea;
+  height: auto;
+  padding: 5px;
+}
+
+.btns > .btn {
+  margin: 15px;
+  line-height: 1.5em;
+  font-size: 1.2em;
+}
+
+.demos {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.demo{
+  height:15em;
+  width:30%;
+  border:1px solid #cccccc;
+  float: left;
+  margin:1.5%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+#demo1{
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+#demo2{
+  -webkit-border-radius: 15em;
+  -moz-border-radius: 15em;
+  border-radius: 15em;
+}
+
+.info{
+  color:#2494f2;
+}

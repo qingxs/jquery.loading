@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>jquery.loading plugin</title>
+  <link href="loading/loading.css" rel="stylesheet"/>
+  <link href="Demo.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+  <h1>A loading pluging with jquery!</h1>
+  <h4>Power by QingXS(重庆－蜗牛)</h4>
+
+  <div class="btns">
+    <button class="btn" data-style="1" data-target="#demo1">demo1</button>
+    <button class="btn" data-style="2" data-target="#demo2">demo2</button>
+    <button class="btn" data-style="3" data-target="#demo3">demo3</button>
+    <button class="btn" data-style="4" data-target="#demo4">demo4</button>
+    <button class="btn" data-style="5" data-target="#demo5">demo5</button>
+    <button class="btn" data-style="6" data-target="#demo6">demo6</button>
+    <button class="btn" data-style="7" data-target="#demo7">demo7</button>
+  </div>
+  <div class="demos">
+    <div class="demo" id="demo1">demo 1</div>
+    <div class="demo" id="demo2">demo 2</div>
+    <div class="demo" id="demo3">demo 3</div>
+    <div class="demo" id="demo4">demo 4</div>
+    <div class="demo" id="demo5">demo 5</div>
+    <div class="demo" id="demo6">demo 6</div>
+    <div class="demo" id="demo7">demo 7</div>
+  </div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="loading/jquery.loading.min.js"></script>
+<script>
+  $(function () {
+    $('.btn').on('click', function () {
+      var demo = $(this).data('target')
+        , style = $(this).data('style').toString()
+        , loading = $(demo).loading({
+          style: style
+          , bgColor: 'rgba(' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ',' + Math.ceil(Math.random() * 255) + ',' + (Math.ceil(Math.random() * 6) / 10) + ')'
+          , onHide: function () {
+            $(demo).append('<div class="info">Loading End!</div>');
+          }
+        });
+      loading.show();
+      setTimeout(function () {
+        loading.hide();
+      }, 1000)
+    })
+  })
+</script>
+</body>
+</html>

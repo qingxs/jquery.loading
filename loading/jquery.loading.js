@@ -14,7 +14,8 @@
     this._.opts = element.opts;
     this._.$load = element[0].firstElementChild;
 
-    if (this._.$load.className.split(/\s+/).indexOf(this._.opts.name) >= 0){
+
+    if (this._.$load && this._.$load.className.split(/\s+/).indexOf(this._.opts.name) >= 0) {
       this._.$load = $(this._.$load);
       return this;
     }
